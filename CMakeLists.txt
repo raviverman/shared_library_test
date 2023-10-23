@@ -33,3 +33,9 @@ add_executable(main src/main.c)
 
 # Link the executable with the shared library
 target_link_libraries(main dmath)
+
+add_custom_target(run
+    COMMAND ${CMAKE_BINARY_DIR}/build/main
+    COMMENT "Running the main binary"
+    DEPENDS main
+)
